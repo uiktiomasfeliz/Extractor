@@ -1,9 +1,8 @@
 app.controller('GameCtrl', function($scope, $window, $timeout) {
 
-  $scope.btnOne = '1';
-  $scope.btnTwo = '2';
-  $scope.btnThree = '3';
   $scope.TurnoUsuario = false;
+  $scope.valoresDefault = [1,2,3];
+  var valoresCalculados = [];
 
   var innerWidth = $window.innerWidth;
   var innerHeight = $window.innerHeight;
@@ -11,8 +10,25 @@ app.controller('GameCtrl', function($scope, $window, $timeout) {
   var valorOriginal = Aleatorio(20, 60);
   $scope.valorInestable = valorOriginal;
 
+  $scope.percent = 100;
+  $scope.options = {
+      animate:{
+          duration:1000,
+          enabled:true
+      },
+      size: innerWidth/1.1,
+      barColor:'#2C3E50',
+      scaleColor:false,
+      lineWidth:30,
+      lineCap:'circle'
+  };
+
+  $scope.valoresDefault.forEach(function(item){
+    valoresCalculados.push(reglaDeTres(valorOriginal, item));
+  });
+  console.log(valoresCalculados);
   function reglaDeTres(arg0, arg1){
-      return  Math.round((arg1*100)/arg0);
+      return  (arg1*100)/arg0;
   }
 
   function Aleatorio(inferior, superior){
@@ -20,19 +36,24 @@ app.controller('GameCtrl', function($scope, $window, $timeout) {
   }
 
   function minusCpu(val){
+    console.log(val + '  ->  '+ valoresCalculados[val-1]);
+    console.log('------------------------------Porcentaje---------------------------');
+    console.log($scope.percent +'-'+valoresCalculados[val-1]);
     if($scope.valorInestable > 0){
       $scope.valorInestable -= val;
-      $scope.percent -= reglaDeTres(valorOriginal, val);
+      if($scope.percent!=0)
+        $scope.percent -= valoresCalculados[val-1];//reglaDeTres(valorOriginal, val);
+      console.log('='+$scope.percent);
       $scope.TurnoUsuario = true;
     }
+    console.log('------------------------------End Porcentaje---------------------------');
   }
 
   function runCpu(){
     $timeout(function() {
       var valor = ($scope.valorInestable - 1) % (3+1);
-      console.log(valor);
       minusCpu(valor);
-    }, 1000);
+    }, 500);
   }
 
   function DecidirTurno (){
@@ -44,28 +65,23 @@ app.controller('GameCtrl', function($scope, $window, $timeout) {
     }
   }
 
-  //INIT GAME
-  DecidirTurno();
+  $scope.minus = function(val, index){
+    console.log(val + '  ->  '+ valoresCalculados[index]);
+    console.log('------------------------------Porcentaje---------------------------');
+    console.log($scope.percent +'-'+valoresCalculados[index]);
 
-  $scope.percent = 100;
-  $scope.options = {
-      animate:{
-          duration:2000,
-          enabled:true
-      },
-      size: innerWidth/1.1,
-      barColor:'#2C3E50',
-      scaleColor:false,
-      lineWidth:30,
-      lineCap:'circle'
-  };
-
-  $scope.minus = function(val){
     if($scope.valorInestable > 0 && $scope.TurnoUsuario){
       $scope.valorInestable -= val;
-      $scope.percent -= reglaDeTres(valorOriginal, val);
+      if($scope.percent!=0)
+        $scope.percent -= valoresCalculados[index];//reglaDeTres(valorOriginal, val);
+      console.log('='+$scope.percent);
       $scope.TurnoUsuario = false;
       runCpu();
     }
+    console.log('------------------------------End Porcentaje---------------------------');
   }
+
+  //INIT GAME
+  DecidirTurno();
+
 });
