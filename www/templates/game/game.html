@@ -1,0 +1,18 @@
+<ion-view class="pane">
+  <ion-content  scroll="false">
+    <!--<div class="intro-parent">-->
+      <div class="game">
+        <div class="custom-circle" easypiechart options="options" percent="percent">
+          <span class="percent custom-circle score" ng-bind="valorInestable"></span>
+        </div>
+      </div>
+      <div class="game-sub">
+        <div class="button-bar bar-dark custom">
+          <a class="button" ng-click="minus(1)" ng-disabled="valorInestable < btnOne"> {{btnOne}} </a>
+          <a class="button" ng-click="minus(2)" ng-disabled="valorInestable < btnTwo"> {{btnTwo}} </a>
+          <a class="button" ng-click="minus(3)" ng-disabled="valorInestable < btnThree"> {{btnThree}} </a>
+        </div>
+      </div>
+    <!--</div>-->
+  </ion-content>
+</ion-view>

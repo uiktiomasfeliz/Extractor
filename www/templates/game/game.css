@@ -1,0 +1,100 @@
+
+body{font-family: "Arial", Helvetica, sans-serif;color:#333;}
+.center{
+	position:absolute;
+	width:700px;
+	height:600px;
+	top:50%;
+	left:50%;
+	margin-left:-350px;
+	margin-top:-300px;
+}
+h1{font-size:20px;}
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  margin-right:22px;
+  font-weight:bold;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+	/*
+  display: inline-block;
+  line-height: 160px;
+  z-index: 2;
+	*/
+}
+.percent:after {
+  content: '';
+  /*
+	margin-left: 0.1em;
+  font-size: .8em;
+	*/
+}
+
+a{
+	text-decoration:none;
+	font-family: 'Black Ops One', cursive;
+	font-size:25px;
+	color:#222;
+
+}
+a:hover{
+
+	color:#DF7401;
+
+}
+.nsc{
+
+	width:100%;
+	text-align:right;
+	margin-top:50px;
+}
+
+.custom {
+	width: 50%;
+	text-align: center;
+	margin: auto;
+}
+
+.custom-circle {
+	position: fixed;
+ top: 50%;
+ left: 50%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -80%);
+}
+
+.score {
+	/*
+	position: relative;
+  margin-top: 200px;
+  margin-left: 170px;
+	*/
+  font-size: 55px;
+}
+
+.game {
+  height: 85vh;
+}
+
+.game-sub {
+  height: 15vh;
+}
+
+.game-sub>a {
+  margin:auto;
+  text-align: center;
+  display:block;
+  margin-bottom: 15px;
+  width: 20%;
+}

@@ -1,0 +1,34 @@
+/*
+.intro-parent {
+  background: url("../../img/intro.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+}
+scroll-content
+*/
+.pane {
+  background: url("../../img/intro.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.intro {
+  height: 70vh;
+}
+
+.intro-sub {
+  height: 30vh;
+}
+
+.intro-sub>a {
+  margin:auto;
+  text-align: center;
+  display:block;
+  margin-bottom: 15px;
+  width: 40%;
+}
