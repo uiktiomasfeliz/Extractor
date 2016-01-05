@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.ionic462388" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>canica</name>
+  <name>Extractor</name>
   <description>
-        An Ionic Framework and Cordova project.
+        An Game based on Ionic Framework and Cordova project.
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="info@extractor.com" href="http://extractor-game.com/">
+      Extractor Inc.
     </author>
   <content src="index.html"/>
   <access origin="*"/>

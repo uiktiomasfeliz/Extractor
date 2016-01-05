@@ -8,9 +8,9 @@
       </div>
       <div class="game-sub">
         <div class="button-bar bar-dark custom">
-          <a class="button" ng-click="minus(1)" ng-disabled="valorInestable < btnOne"> {{btnOne}} </a>
-          <a class="button" ng-click="minus(2)" ng-disabled="valorInestable < btnTwo"> {{btnTwo}} </a>
-          <a class="button" ng-click="minus(3)" ng-disabled="valorInestable < btnThree"> {{btnThree}} </a>
+          <a class="button" ng-click="minus(1)" ng-hide="valorInestable < btnOne"> {{btnOne}} </a>
+          <a class="button" ng-click="minus(2)" ng-hide="valorInestable < btnTwo"> {{btnTwo}} </a>
+          <a class="button" ng-click="minus(3)" ng-hide="valorInestable < btnThree"> {{btnThree}} </a>
         </div>
       </div>
     <!--</div>-->

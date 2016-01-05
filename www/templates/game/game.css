@@ -1,4 +1,4 @@
-
+z
 body{font-family: "Arial", Helvetica, sans-serif;color:#333;}
 .center{
 	position:absolute;
@@ -71,7 +71,7 @@ a:hover{
  top: 50%;
  left: 50%;
  /* bring your own prefixes */
- transform: translate(-50%, -80%);
+ transform: translate(-50%, -60%);
 }
 
 .score {
